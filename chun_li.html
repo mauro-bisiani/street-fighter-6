@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="MOSO" />
+  <meta name="dcterms.date" content="2025-09-24" />
+  <title>Chun Li</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+      ul {
+          padding-left: 0.4rem;
+      }
+      .sidebar ul {
+          list-style-type: none;
+      }
+      .sidebar {
+          width: 160px;
+          font-size: 0.7em;
+          background-color: Aquamarine;
+          padding-right: 1em;
+          padding-left: 0.3em;
+          padding-top: 2.5em;
+          box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+          position: fixed;
+          left: -400px;
+          top: 0%;
+          height: 100vh;
+          transition: left 0.3s ease;
+          z-index: 1000;
+          box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+          overflow: auto;
+          /* TODO: fix sidebar being cut off when using high zoom levels */
+      }
+      .sidebar.open {
+          left: 0;
+      }
+      .close-btn {
+          background: none;
+          border: none;
+          font-size: 1.5em;
+          cursor: pointer;
+          float: right;
+          margin-bottom: 1em;
+      }
+      .sidebar-toggle {
+          position: fixed;
+          top: 0.5em;
+          left: 0.5em;
+          z-index: 1100;
+          background: black;
+          color: white;
+          border: none;
+          padding: 0.2em;
+          font-size: 0.8em;
+          cursor: pointer;
+          border-radius: 4px;
+      }
+      html {
+          margin: 0;
+          padding: 0;
+      }
+      body {
+          padding-top: 0px;
+      }
+      #title-block-header {
+          margin-bottom: 1em;
+      }
+      .author, .date {
+          margin: 0.5em;
+      }
+      .author, .date {
+          display: none;
+      }
+      h1 {
+          margin-top: 0;
+          padding-top: 0;
+          margin-bottom: 0;
+      }
+      table {
+          width: 56em !important;
+          overflow-x: auto;
+          margin-left: -28%;
+          table-layout: fixed;
+          display: table;
+          border-collapse: collapse;
+      }
+      tbody tr:nth-child(even) {
+          background-color: Plum;
+      }
+      th {
+          background-color: SlateBlue;
+          color: white;
+          font-size: 0.6em;
+      }
+      td {
+          font-size: 0.6em;
+      }
+      td, th {
+          border: 1px solid black;
+          width: 6.666%;
+      }
+      img {
+          height: 200px;
+          width: auto;
+          display: block;
+          margin: auto;
+      }
+      .button {
+          font-weight: bold;
+          display: inline-block;
+          border: 2px solid grey;
+          text-align: center;
+          padding: 0.2em;
+          border-radius: 20px;
+      }
+      .dir {
+          color: white;
+          font-weight: bold;
+          display: inline-block;
+          border: 2px solid grey;
+          text-align: center;
+          padding: 0.2em;
+          background-color: black;
+          border-radius: 20px;
+      }
+      .light {
+          color: cyan;
+          font-weight: bold;
+          display: inline-block;
+          border: 2px solid grey;
+          text-align: center;
+          padding: 0.2em;
+          background-color: black;
+          border-radius: 20px;
+      }
+      .medium {
+          color: yellow;
+          font-weight: bold;
+          display: inline-block;
+          border: 2px solid grey;
+          text-align: center;
+          padding: 0.2em;
+          background-color: black;
+          border-radius: 20px;
+      }
+      .heavy {
+          color: red;
+          font-weight: bold;
+          display: inline-block;
+          border: 2px solid grey;
+          text-align: center;
+          padding: 0.2em;
+          background-color: black;
+          border-radius: 20px;
+      }
+      code {
+          background-color: Tan;
+          border: 2px solid Red;
+          display: inline-block;
+          text-align: center;
+          padding-left: 0.5em;
+          padding-right: 0.5em;
+          border-radius: 20px;
+      }
+      .drive-gauge {
+          background-color: green;
+          color: white;
+          display: inline-block;
+          width: 3em;
+          text-align: center;
+          float: right;
+      }
+      .super-art {
+          background-color: red;
+          color: white;
+          display: inline-block;
+          width: 3em;
+          text-align: center;
+          float: right;
+      }
+      h2 {
+          background-color: CornflowerBlue;
+          text-align: center;
+          padding: 0.5em;
+          border: 2px solid black;
+          width: 100%;
+          margin: auto;
+      }
+      h3 {
+          background-color: PaleTurquoise;
+          text-align: center;
+          padding: 0.3em;
+          border: 2px solid black;
+          border-radius: 20px;
+          max-width: 60%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Chun Li</h1>
+<p class="author">MOSO</p>
+<p class="date">20250924</p>
+</header>
+<p><img
+src="https://www.streetfighter.com/6/assets/images/character/chunli/chunli.png" /></p>
+<button id="sidebarToggle" class="sidebar-toggle">
+☰
+</button>
+<nav class="sidebar" id="sidebar">
+<button class="close-btn" id="sidebarClose">
+×
+</button>
+<ul>
+<li>
+<a href="#title-block-header">Top</a>
+</li>
+<li>
+<a href="#commands">Commands</a>
+<ul>
+<li>
+<a href="#special-moves">Special Moves</a>
+</li>
+<li>
+<a href="#super-arts">Super Arts</a>
+</li>
+<li>
+<a href="#unique-attacks">Unique Attacks</a>
+</li>
+<li>
+<a href="#throws">Throws</a>
+</li>
+<li>
+<a href="#common-moves">Common Moves</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#frame-data">Frame Data</a>
+</li>
+</ul>
+</nav>
+<h2 id="commands">Commands</h2>
+<h3 id="special-moves">Special Moves</h3>
+<h4 id="kikoken">Kikoken</h4>
+<p><span class="dir">L(Hold)</span>, <span class="dir">R</span> + <span
+class="button">P</span> <span class="drive-gauge">2</span></p>
+<video controls width="auto" height="150">
+<source src="https://www.streetfighter.com/6/assets/images/character/chunli/skill/movie/501.mp4" type="video/mp4">
+</video>
+<p>Fire a Ki blast directly forward.</p>
+<p><em>Used for attacking opponents at range.</em></p>
+<h4 id="hundred-lightning-kicks">Hundred Lightning Kicks</h4>
+<p><span class="dir">D</span>, <span class="dir">DR</span>, <span
+class="dir">R</span> + <span class="button">K</span> <span
+class="drive-gauge">2</span></p>
+<video controls width="auto" height="150">
+<source src="https://www.streetfighter.com/6/assets/images/character/chunli/skill/movie/502.mp4" type="video/mp4">
+</video>
+<p>Unleash a series of high-speed kicks.</p>
+<p><em>Useful for creating combos out of normal attacks.</em></p>
+<h5 id="lightning-kick-barrage">Lightning Kick Barrage</h5>
+<p><span class="button">K</span>, <span class="button">K</span>
+<sup>after an OD Hundred Lightning Kicks</sup></p>
+<p>A series of kicks that can be performed following an OD Hundred
+Lightning Kicks.</p>
+<p><em>Useful for tacking on additional damage while also knocking down
+your opponent.</em></p>
+<h4 id="aerial-hundred-lighting-kicks">Aerial Hundred Lighting
+Kicks</h4>
+<p><span class="dir">D</span>, <span class="dir">DR</span>, <span
+class="dir">R</span> + <span class="button">K</span>
+<sup>during a neutral or forward jump</sup> <span
+class="drive-gauge">2</span></p>
+<p>A Hundred Lightning Kicks performed while jumping.</p>
+<p><em>Effective when used to convert a jumping attack into a
+combo.</em></p>
+<h4 id="spinning-bird-kick">Spinning Bird Kick</h4>
+<p><span class="dir">D(Hold)</span>, <span class="dir">U</span> + <span
+class="button">K</span> <span class="drive-gauge">2</span></p>
+<p>A series of rotating, upside-down kicks with your legs extended
+wide.</p>
+<p><em>This move does a lot of damage, and is useful when performing
+combos against opponents that have left themselves wide open.</em></p>
+<h4 id="hazanshu">Hazanshu</h4>
+<p><span class="dir">D</span>, <span class="dir">DL</span>, <span
+class="dir">L</span> + <span class="button">K</span> <span
+class="drive-gauge">2</span></p>
+<p>Leap forward, rotate in the air, and slam your leg downward with a
+powerful kick.</p>
+<p><em>Useful for checking an opponent’s sweeps, or as a way to close
+distance.</em></p>
+<h4 id="tensho-kicks">Tensho Kicks</h4>
+<p><span class="dir">D</span>, <span class="dir">D</span> + <span
+class="button">K</span> <span class="drive-gauge">2</span></p>
+<p>Rise into the air with multiple kicks.</p>
+<p><em>Useful for countering an opponent’s jumping attacks, or as a way
+to close out combos.</em></p>
+<h3 id="super-arts">Super Arts</h3>
+<h4 id="kikosho">Kikosho</h4>
+<p><span class="dir">D</span>, <span class="dir">DR</span>, <span
+class="dir">R</span>, <span class="dir">D</span>, <span
+class="dir">DR</span>, <span class="dir">R</span> + <span
+class="button">P</span> <span class="super-art">1</span></p>
+<p>Create a mass of energy directly in front of you.</p>
+<p><em>Its swift speed and invulnerability can quickly turn the tables
+on an opponent.</em></p>
+<h4 id="aerial-kikosho">Aerial Kikosho</h4>
+<p><span class="dir">D</span>, <span class="dir">DR</span>, <span
+class="dir">R</span>, <span class="dir">D</span>, <span
+class="dir">DR</span>, <span class="dir">R</span> + <span
+class="button">P</span> <sup>during a jump</sup> <span
+class="super-art">1</span></p>
+<p>Fire a kikosho diagonally downward while jumping.</p>
+<p><em>Effective when used to convert a jumping attack into a
+combo.</em></p>
+<h4 id="hoyoku-sen">Hoyoku-sen</h4>
+<p><span class="dir">D</span>, <span class="dir">DR</span>, <span
+class="dir">R</span>, <span class="dir">D</span>, <span
+class="dir">DR</span>, <span class="dir">R</span> + <span
+class="button">K</span> <span class="super-art">2</span></p>
+<p>Move forward while unleashing a series of kicks and then launch your
+opponent into the air. The last hit can be immediately canceled into a
+jump.</p>
+<h4 id="soten-ranka">Soten Ranka</h4>
+<p><span class="dir">D</span>, <span class="dir">DL</span>, <span
+class="dir">L</span>, <span class="dir">D</span>, <span
+class="dir">DL</span>, <span class="dir">L</span> + <span
+class="button">K</span> <span class="super-art">3</span></p>
+<p>Perform a roundhouse kick, knock your opponent into the air with a
+series of attacks, and then smash them with a devastating kick.</p>
+<p><em>Useful for tacking on big damage in a combo, or as a quick way to
+turn the tables.</em></p>
+<h3 id="unique-attacks">Unique Attacks</h3>
+<h4 id="swift-thrust">Swift Thrust</h4>
+<p><span class="dir">L</span> or <span class="dir">R</span> + M<span
+class="medium">P</span></p>
+<p>A strike with long reach that can be canceled into special moves.</p>
+<h4 id="hakkei">Hakkei</h4>
+<p><span class="dir">L</span> + H<span class="heavy">P</span></p>
+<p>A strong attack with quick recovery time.</p>
+<h4 id="water-lotus-fist">Water Lotus Fist</h4>
+<p><span class="dir">DR</span> + H<span class="heavy">P</span></p>
+<p>An overhead attack that cannot be blocked while crouching.</p>
+<h4 id="yokusen-kick">Yokusen Kick</h4>
+<p><span class="dir">R</span> + H<span class="heavy">K</span></p>
+<p>A jumping kick with long reach that is effective against an
+opponent’s sweeps.</p>
+<h4 id="falling-crane">Falling Crane</h4>
+<p><span class="dir">DR</span> + H<span class="heavy">K</span></p>
+<p>A knee strike performed after placing yourself behind your opponent
+while leaping into the air.</p>
+<h4 id="yoso-kick">Yoso Kick</h4>
+<p><span class="dir">D</span> + M<span class="medium">K</span>
+<sup>during a jump</sup>-<sup>can be performed up to three times</sup></p>
+<p>A stomping attack performed while jumping. Follow-ups can be
+performed after the first hit connects with or is blocked by the
+opponent.</p>
+<h4 id="wall-jump">Wall Jump</h4>
+<p><span class="dir">UR</span>
+<sup>during a jump</sup>-<sup>must be near a wall</sup></p>
+<p>While jumping, kick off a wall to perform another jump.</p>
+<h4 id="soaring-eagle-punches">Soaring Eagle Punches</h4>
+<p>H<span class="heavy">P</span> &gt; H<span class="heavy">P</span>
+<sup>during a jump</sup></p>
+<p>A series of attacks performed while jumping.</p>
+<h4 id="serenity-stream">Serenity Stream</h4>
+<p><span class="dir">D</span>, <span class="dir">DL</span>, <span
+class="dir">L</span> + <span class="button">P</span></p>
+<p>Adopt a very low, stationary fighting stance. While in this stance,
+each attack button produces different attacks.</p>
+<h5 id="orchid-palm">Orchid Palm</h5>
+<p>L<span class="light">P</span></p>
+<p>A quick strike, performed during Serenity Stream.</p>
+<h5 id="snake-strike">Snake Strike</h5>
+<p>M<span class="medium">P</span></p>
+<p>A forward-moving, repeatable low profile strike, performed during
+Serenity Stream.</p>
+<h5 id="lotus-fist">Lotus Fist</h5>
+<p>H<span class="heavy">P</span></p>
+<p>An overhead attack that cannot be blocked while crouching, performed
+during Serentity Stream.</p>
+<h5 id="forward-strike">Forward Strike</h5>
+<p>L<span class="light">K</span></p>
+<p>A quick, low kick, performed during Serenity Stream.</p>
+<h5 id="senpu-kick">Senpu Kick</h5>
+<p>M<span class="medium">K</span></p>
+<p>A low kick with long reach, performed during Serenity Stream.</p>
+<h5 id="tenku-kick">Tenku Kick</h5>
+<p>H<span class="heavy">K</span></p>
+<p>A launching kick, performed during Serenity Stream. Can immediately
+be canceled into a jump on hit.</p>
+<h3 id="throws">Throws</h3>
+<h4 id="koshuto">Koshuto</h4>
+<p><span class="dir">N</span> or <span class="dir">R</span> + L<span
+class="light">P</span> L<span class="light">K</span>
+<sup>when near opponent</sup></p>
+<p>Seize your opponent by the arm, spin them around you, and throw them
+aside.</p>
+<p><em>Throws your opponent without switching places with them.</em></p>
+<h4 id="taiji-fan">Taiji Fan</h4>
+<p><span class="dir">L</span> + L<span class="light">P</span> L<span
+class="light">K</span> <sup>when near opponent</sup></p>
+<p>Disrupt your opponent’s balance with an elbow strike, scoop them up,
+and toss them behind you.</p>
+<p><em>Throws your opponent while switching places with them.</em></p>
+<h4 id="ryuseiraku">Ryuseiraku</h4>
+<p>L<span class="light">P</span> L<span class="light">K</span>
+<sup>during a jump</sup>-<sup>when near opponent</sup></p>
+<p>Catch your opponent in mid-air and slam them into the ground.</p>
+<p><em>Throws your opponent whithout switching places with
+them.</em></p>
+<h3 id="common-moves">Common Moves</h3>
+<h4 id="drive-reversal-hoyoku-kick">Drive Reversal: Hoyoku Kick</h4>
+<p>H<span class="heavy">P</span> H<span class="heavy">K</span> <span
+class="drive-gauge">1</span></p>
+<p>Lunge forward with a powerful attack.</p>
+<p><em>Can be used to absorb an opponent’s attack while launching your
+own offensive.</em></p>
+<h4 id="drive-impact-hosen-kick">Drive Impact: Hosen Kick</h4>
+<p><span class="dir">R</span> + H<span class="heavy">P</span> H<span
+class="heavy">K</span>
+<sup>when blocking, recovering from a knockdown, or during a successful Drive Parry</sup>
+<span class="drive-gauge">2</span></p>
+<p>Can be used after blocking an attack to quickly turn a defensive
+position into an offensive one. Can also be used when recovering from a
+knockdown. The input can be held while downed to perform this when
+rising.</p>
+<h4 id="drive-parry">Drive Parry</h4>
+<p>M<span class="medium">P</span> M<span class="medium">K</span>
+<sup>hold the button to extend the move’s duration</sup> <span
+class="drive-gauge">&gt;&gt;</span></p>
+<p>Adopt a stance that allows you to deflect all opponent strikes.</p>
+<p><em>This stance can be sustained by holding down the command used to
+activate it.</em></p>
+<h5 id="parry-drive-rush">Parry Drive Rush</h5>
+<p><span class="dir">R</span>, <span class="dir">R</span> <span
+class="drive-gauge">0.5</span></p>
+<p>Immediately move forward from a Drive Parry stance.</p>
+<p><em>Normal or unique attacks performed while moving will have their
+properties changed.</em></p>
+<h4 id="cancel-drive-rush">Cancel Drive Rush</h4>
+<p><span class="dir">R</span>, <span class="dir">R</span> or (<span
+class="dir">N</span> or <span class="dir">R</span>) + M<span
+class="medium">P</span> M<span class="medium">K</span>
+<sup>while connecting with a special-cancelable move</sup> <span
+class="drive-gauge">3</span></p>
+<p>Immediately move forward out of an attack.</p>
+<p><em>Can be performed during any special-cancelable move.</em></p>
+<h2 id="frame-data">Frame Data</h2>
+<table style="width:94%;">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 2%" />
+<col style="width: 3%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 9%" />
+<col style="width: 10%" />
+<col style="width: 3%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr>
+<th rowspan="2" style="text-align: center;">Move Name</th>
+<th colspan="3" style="text-align: center;">Frame</th>
+<th colspan="2" style="text-align: center;">Recovery</th>
+<th rowspan="2" style="text-align: center;">Cancel</th>
+<th rowspan="2" style="text-align: center;">Damage</th>
+<th rowspan="2" style="text-align: center;">Combo Scaling</th>
+<th style="text-align: center;">Drive Gauge Increase</th>
+<th colspan="2" style="text-align: center;">Drive Gauge Decrease</th>
+<th rowspan="2" style="text-align: center;">Super Art Gauge
+Increase</th>
+<th rowspan="2" style="text-align: center;">Properties</th>
+<th rowspan="2" style="text-align: center;">Miscellaneous</th>
+</tr>
+<tr>
+<th style="text-align: center;">Startup</th>
+<th style="text-align: center;">Active</th>
+<th style="text-align: center;">Recovery</th>
+<th style="text-align: center;">Hit</th>
+<th style="text-align: center;">Block</th>
+<th style="text-align: center;">Hit</th>
+<th style="text-align: center;">Block</th>
+<th style="text-align: center;">Punish Counter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Standing Light Punch</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4-6</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">Starter Scaling 20%</td>
+<td style="text-align: center;">250</td>
+<td style="text-align: center;">-500</td>
+<td style="text-align: center;">-2000</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;">Can be rapid canceled.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Standing Light Kick</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5-7</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">Starter Scaling 20%</td>
+<td style="text-align: center;">250</td>
+<td style="text-align: center;">-500</td>
+<td style="text-align: center;">-2000</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Standing Medium Punch</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5-8</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1500</td>
+<td style="text-align: center;">-3000</td>
+<td style="text-align: center;">-4000</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Standing Medium Kick</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">7-10</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">500</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1500</td>
+<td style="text-align: center;">-3000</td>
+<td style="text-align: center;">-4000</td>
+<td style="text-align: center;">700</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Standing Heavy Punch</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">13-15</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">800</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4000</td>
+<td style="text-align: center;">-6000</td>
+<td style="text-align: center;">-8000</td>
+<td style="text-align: center;">800</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;">Can be canceled into Serenity Stream on
+hit or block</td>
+</tr>
+<tr>
+<td style="text-align: center;">Standing Heavy Kick</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">14-16</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">900</td>
+<td style="text-align: center;">Starter Scaling 20%</td>
+<td style="text-align: center;">3000</td>
+<td style="text-align: center;">-6000</td>
+<td style="text-align: center;">-10000</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;">Can be canceled into Serenity Stream on
+hit or block Forces a juggle state when hitting a mid-air opponent</td>
+</tr>
+<tr>
+<td style="text-align: center;">Crouching Light Punch</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4-6</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">Starter Scaling 20%</td>
+<td style="text-align: center;">250</td>
+<td style="text-align: center;">-500</td>
+<td style="text-align: center;">-2000</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;">Can be rapid canceled.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Crouching Light Kick</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4-5</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">Starter Scaling 20%</td>
+<td style="text-align: center;">250</td>
+<td style="text-align: center;">-500</td>
+<td style="text-align: center;">-2000</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">Low</td>
+<td style="text-align: center;">Can be rapid canceled.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Crouching Medium Punch</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6-9</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1500</td>
+<td style="text-align: center;">-3000</td>
+<td style="text-align: center;">-4000</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;">1 frames of recovery added when the
+attack misses</td>
+</tr>
+</tbody>
+</table>
+<script>
+  const toggleBtn = document.getElementById('sidebarToggle');
+  const closeBtn = document.getElementById('sidebarClose');
+  const sidebar = document.getElementById('sidebar');
+
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+  });
+
+  // Optional: close sidebar when clicking outside or pressing ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      sidebar.classList.remove('open');
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (sidebar.classList.contains('open') &&
+        !sidebar.contains(e.target) &&
+        !toggleBtn.contains(e.target)) {
+      sidebar.classList.remove('open');
+    }
+  });
+</script>
+<script>
+function updateZoomFactor() {
+  const zoomFactor = window.outerWidth / window.innerWidth;
+  document.documentElement.style.setProperty('--zoom-factor', zoomFactor);
+}
+
+window.addEventListener('resize', updateZoomFactor);
+updateZoomFactor();
+</script>
+</body>
+</html>
